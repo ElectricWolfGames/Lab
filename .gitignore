@@ -11,3 +11,7 @@
 /eWolfLabs/packages
 /eWolfLabs/BasicUnitTests/.vs/BasicUnitTests/v15
 /eWolfLabs/BasicUnitTests/CalculatorUnitTests/bin/Debug
+/eWolfLabs/BasicUnitTests/Calculator/bin/Debug
+/eWolfLabs/BasicUnitTests/Calculator/obj/Debug
+/eWolfLabs/BasicUnitTests/CalculatorUnitTests/obj/Debug
+/eWolfLabs/BasicUnitTests/packages
