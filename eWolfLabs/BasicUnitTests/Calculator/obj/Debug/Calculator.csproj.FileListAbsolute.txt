@@ -1,7 +1,0 @@
-C:\GitHub\Labs\Labs\eWolfLabs\BasicUnitTests\Calculator\bin\Debug\Calculator.exe.config
-C:\GitHub\Labs\Labs\eWolfLabs\BasicUnitTests\Calculator\bin\Debug\Calculator.exe
-C:\GitHub\Labs\Labs\eWolfLabs\BasicUnitTests\Calculator\bin\Debug\Calculator.pdb
-C:\GitHub\Labs\Labs\eWolfLabs\BasicUnitTests\Calculator\obj\Debug\Calculator.csprojResolveAssemblyReference.cache
-C:\GitHub\Labs\Labs\eWolfLabs\BasicUnitTests\Calculator\obj\Debug\Calculator.csproj.CoreCompileInputs.cache
-C:\GitHub\Labs\Labs\eWolfLabs\BasicUnitTests\Calculator\obj\Debug\Calculator.exe
-C:\GitHub\Labs\Labs\eWolfLabs\BasicUnitTests\Calculator\obj\Debug\Calculator.pdb
