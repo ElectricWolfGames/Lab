@@ -22,11 +22,6 @@ namespace Calculator
         private int GetInputNumber()
         {
             string text = Console.ReadLine();
-            return ParseText(text);
-        }
-
-        internal int ParseText(string text)
-        {
             return int.Parse(text);
         }
     }
