@@ -7,7 +7,7 @@ namespace Calculator
         private int _firstNumber;
         private int _secondNumber;
 
-        internal void Run()
+        internal int Run()
         {
             Console.WriteLine("Give me your first number");
             _firstNumber = GetInputNumber();
@@ -17,6 +17,8 @@ namespace Calculator
 
             int added = _firstNumber + _secondNumber;
             Console.WriteLine($"Add them together and we get {added}");
+
+            return added;
         }
 
         private int GetInputNumber()
