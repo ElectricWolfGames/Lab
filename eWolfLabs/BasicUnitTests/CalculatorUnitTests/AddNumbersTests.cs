@@ -1,9 +1,11 @@
 ﻿using Calculator;
 using FluentAssertions;
 using NUnit.Framework;
+using System.Diagnostics.CodeAnalysis;
 
 namespace CalculatorUnitTests
 {
+    [ExcludeFromCodeCoverage]
     public class AddNumbersTest
     {
         [Test]

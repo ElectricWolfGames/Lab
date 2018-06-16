@@ -2,9 +2,11 @@
 using FluentAssertions;
 using NUnit.Framework;
 using System.Collections;
+using System.Diagnostics.CodeAnalysis;
 
 namespace CalculatorUnitTests
 {
+    [ExcludeFromCodeCoverage]
     public class AddNumberFullCoverTests
     {
         private Queue _myInputs = new Queue();

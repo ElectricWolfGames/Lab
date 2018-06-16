@@ -1,9 +1,11 @@
 ﻿using Examples.BasicCode;
 using FluentAssertions;
 using NUnit.Framework;
+using System.Diagnostics.CodeAnalysis;
 
 namespace ExamplesUnitTests.BasicCode
 {
+    [ExcludeFromCodeCoverage]
     public class BasicSwitchTests
     {
         [TestCase(BasicSwitch.SwitchableEnum.None, "My None")]
