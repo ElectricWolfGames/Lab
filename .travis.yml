@@ -6,6 +6,6 @@ install:
   - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
 script:
   - xbuild /p:Configuration=Release eWolfLabs/eWolfLabs.sln
-  - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./eWolfLabs/BasicUnitTests/CalculatorUnitTests/bin/Release/CalculatorUnitTests.dll
+  - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./eWolfLabs/BasicUnitTests/CalculatorUnitTests/bin/Debug/CalculatorUnitTests.dll
   
   
