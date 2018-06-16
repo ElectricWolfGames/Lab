@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{63F987AC-E057-45FC-9027-749E9F186275}</ProjectGuid>
+    <ProjectGuid>{570DAF6E-1FE4-46CA-A101-BCC82B5AF44C}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Examples</RootNamespace>
-    <AssemblyName>Examples</AssemblyName>
+    <RootNamespace>UntestableCode</RootNamespace>
+    <AssemblyName>UntestableCode</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,20 +43,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BasicCode\BasicSwitch.cs" />
-    <Compile Include="BasicCode\EliminateSwitch.cs" />
-    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Testable\UserInput.cs" />
+    <Compile Include="Untestable\UserInput.cs" />
+    <Compile Include="Untestable\UsingStaticsUntestable.cs" />
+    <Compile Include="Testable\UsingStaticsTestable.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.7.2.0.5463\analyzers\Google.Protobuf.dll" />
-    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.7.2.0.5463\analyzers\SonarAnalyzer.CSharp.dll" />
-    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.7.2.0.5463\analyzers\SonarAnalyzer.dll" />
+    <Analyzer Include="..\..\packages\SonarAnalyzer.CSharp.7.2.0.5463\analyzers\Google.Protobuf.dll" />
+    <Analyzer Include="..\..\packages\SonarAnalyzer.CSharp.7.2.0.5463\analyzers\SonarAnalyzer.CSharp.dll" />
+    <Analyzer Include="..\..\packages\SonarAnalyzer.CSharp.7.2.0.5463\analyzers\SonarAnalyzer.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

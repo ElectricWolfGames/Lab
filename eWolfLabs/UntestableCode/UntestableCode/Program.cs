@@ -1,14 +1,14 @@
 ﻿using System;
+using UntestableCode.Testable;
 
-namespace Calculator
+namespace UntestableCode
 {
     public static class Program
     {
         private static void Main(string[] args)
         {
-            AddNumbers an = new AddNumbers();
-
-            an.Run();
+            UsingStaticsTestable us = new UsingStaticsTestable();
+            us.Run();
 
             Console.ReadKey();
         }

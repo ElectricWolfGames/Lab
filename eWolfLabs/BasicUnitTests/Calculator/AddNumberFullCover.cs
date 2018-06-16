@@ -6,7 +6,7 @@ namespace Calculator
     {
         private int _firstNumber;
         private int _secondNumber;
-        private Func<string> _input;
+        private readonly Func<string> _input;
 
         public AddNumberFullCover()
         {

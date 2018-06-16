@@ -1,16 +1,16 @@
 using System.Reflection;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("CalculatorUnitTests")]
+[assembly: AssemblyTitle("UntestableCodeTests")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("CalculatorUnitTests")]
+[assembly: AssemblyProduct("UntestableCodeTests")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
-[assembly: Guid("5e8f3535-7909-4b68-a794-113bb4809dbd")]
+[assembly: Guid("0646f896-fce5-4b35-839d-6cbf33ab584a")]
 
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]

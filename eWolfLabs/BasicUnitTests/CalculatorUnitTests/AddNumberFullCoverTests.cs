@@ -1,7 +1,6 @@
 ﻿using Calculator;
 using FluentAssertions;
 using NUnit.Framework;
-using System;
 using System.Collections;
 
 namespace CalculatorUnitTests
@@ -33,6 +32,8 @@ namespace CalculatorUnitTests
         }
 
         [TestCase("20", "20", 40)]
+        [TestCase("220", "0", 220)]
+        [TestCase("words", "words", 0)]
         public void ShouldAddNumbers(string firstNumber, string secondNumber, int expected)
         {
             _myInputs.Clear();
