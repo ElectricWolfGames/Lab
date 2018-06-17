@@ -8,5 +8,10 @@ namespace UntestableCode.Testable
         {
             text = Console.ReadLine();
         }
+
+        public static void GetUserKey(out char key)
+        {
+            key = Console.ReadKey().KeyChar;
+        }
     }
 }
