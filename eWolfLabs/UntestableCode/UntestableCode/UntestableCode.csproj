@@ -47,6 +47,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Testable\UserInput.cs" />
     <Compile Include="Untestable\UserInput.cs" />
+    <Compile Include="Untestable\UsingManyStaticsUntestable.cs" />
     <Compile Include="Untestable\UsingStaticsUntestable.cs" />
     <Compile Include="Testable\UsingStaticsTestable.cs" />
   </ItemGroup>

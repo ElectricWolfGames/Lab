@@ -1,12 +1,10 @@
 ﻿using FluentAssertions;
 using NUnit.Framework;
 using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
 using UntestableCode.Testable;
 
 namespace UntestableCodeTests.Testable
 {
-    [ExcludeFromCodeCoverage]
     public class UsingStaticsTestableTests
     {
         private List<string> _outputs;
