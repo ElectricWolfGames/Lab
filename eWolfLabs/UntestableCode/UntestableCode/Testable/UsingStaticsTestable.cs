@@ -13,7 +13,7 @@ namespace UntestableCode.Testable
             _logger = LogToScreen;
         }
 
-        public UsingStaticsTestable(OutAction<string> getInput, Action<string> logger)
+        public UsingStaticsTestable(OutAction<string> getInput, Action<string> logger) : base()
         {
             _getInput = getInput;
             _logger = logger;

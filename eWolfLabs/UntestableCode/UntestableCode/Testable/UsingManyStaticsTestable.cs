@@ -4,34 +4,38 @@ namespace UntestableCode.Testable
 {
     public class UsingManyStaticsTestable
     {
-        private IStaticHolder _staticHolder;
+        private readonly IStaticHolder _staticHolder;
+        private readonly Action<string> _logger;
 
         public UsingManyStaticsTestable()
         {
             _staticHolder = new LiveStaticHolder();
         }
 
-        public UsingManyStaticsTestable(IStaticHolder staticHolder) : base()
+        public UsingManyStaticsTestable(IStaticHolder staticHolder, Action<string> logger) : base()
         {
             _staticHolder = staticHolder;
+            _logger = logger;
         }
+
+        public delegate void OutAction<T1>(out T1 inputData);
 
         public void Run()
         {
-            Console.WriteLine("Input your value:");
+            _logger("Input your value:");
 
             string inputValue;
             _staticHolder.GetUserInput(out inputValue);
 
-            Console.WriteLine($"Here is your text = {inputValue}");
+            _logger($"Here is your text = {inputValue}");
 
-            Console.WriteLine("Input your value:");
+            _logger("Input your value:");
 
             char inputChar;
             _staticHolder.GetUserKey(out inputChar);
-            Console.WriteLine();
+            _logger(string.Empty);
 
-            Console.WriteLine($"Here is your key value = {inputChar}");
+            _logger($"Here is your key value = {inputChar}");
         }
     }
 }
