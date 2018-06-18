@@ -14,7 +14,7 @@ namespace ExamplesUnitTests.BasicCode
         {
             EliminateSwitch sw = new EliminateSwitch();
 
-            string result = sw.GetStringFromSwitch(myEnum);
+            string result = sw.GetStringFrom(myEnum);
             result.Should().Be(expected);
         }
     }

@@ -9,7 +9,7 @@
             Second
         }
 
-        public string GetStringFromSwitch(SwitchableEnum value)
+        public string GetStringFrom(SwitchableEnum value)
         {
             string retValue = "My Unknown";
             switch (value)
