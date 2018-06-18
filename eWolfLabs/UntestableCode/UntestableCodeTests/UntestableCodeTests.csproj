@@ -53,6 +53,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Testable\FakeStaticHolder.cs" />
     <Compile Include="Testable\UsingManyStaticsTestableTests.cs" />
     <Compile Include="Testable\UsingStaticsTestableTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

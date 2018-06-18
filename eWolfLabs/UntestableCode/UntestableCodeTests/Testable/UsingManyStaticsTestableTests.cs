@@ -35,21 +35,5 @@ namespace UntestableCodeTests.Testable
         {
             _outputs.Add(textToDisplay);
         }
-
-        private class FakeStaticHolder : IStaticHolder
-        {
-            public readonly Queue<string> OutputsStrings = new Queue<string>();
-            public readonly Queue<char> OutputsKeys = new Queue<char>();
-
-            public void GetUserInput(out string inputValue)
-            {
-                inputValue = OutputsStrings.Dequeue();
-            }
-
-            public void GetUserKey(out char inputChar)
-            {
-                inputChar = OutputsKeys.Dequeue();
-            }
-        }
-    }
+    }    
 }
