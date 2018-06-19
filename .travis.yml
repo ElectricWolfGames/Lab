@@ -7,5 +7,5 @@ install:
 script:
   - xbuild /p:Configuration=Release eWolfLabs/eWolfLabs.sln
   - mono ./testrunner/NUnit.ConsoleRunner.3.8.0/tools/nunit3-console.exe eWolfLabs/ExamplesUnitTests/bin/Release/ExamplesUnitTests.dll
-  - mono ./testrunner/NUnit.ConsoleRunner.3.8.0/tools/nunit-console.exe eWolfLabs/BasicUnitTests/CalculatorUnitTests/bin/Release/CalculatorUnitTests.dll
-  - mono ./testrunner/NUnit.ConsoleRunner.3.8.0/tools/nunit-console.exe eWolfLabs/UntestableCode/UntestableCodeTests/bin/Release/UntestableCodeTests.dll
+  - mono ./testrunner/NUnit.ConsoleRunner.3.8.0/tools/nunit3-console.exe eWolfLabs/BasicUnitTests/CalculatorUnitTests/bin/Release/CalculatorUnitTests.dll
+  - mono ./testrunner/NUnit.ConsoleRunner.3.8.0/tools/nunit3-console.exe eWolfLabs/UntestableCode/UntestableCodeTests/bin/Release/UntestableCodeTests.dll

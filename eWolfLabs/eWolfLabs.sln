@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculatorUnitTests", "Basi
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CanWeTestIt", "CanWeTestIt", "{E59D082C-1878-4F62-800D-00081319D12C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UntestableCodeTests", "UntestableCode\UntestableCodeTests\UntestableCodeTests.csproj", "{0646F896-FCE5-4B35-839D-6CBF33AB584A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UntestableCodeUnitTests", "UntestableCode\UntestableCodeTests\UntestableCodeUnitTests.csproj", "{0646F896-FCE5-4B35-839D-6CBF33AB584A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UntestableCode", "UntestableCode\UntestableCode\UntestableCode.csproj", "{570DAF6E-1FE4-46CA-A101-BCC82B5AF44C}"
 EndProject
