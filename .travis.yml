@@ -6,5 +6,5 @@ install:
   - nuget install NUnit.Runners -Version 3.8.0 -OutputDirectory testrunner
 script:
   - xbuild /p:Configuration=Release eWolfLabs/eWolfLabs.sln
-  - mono ./testrunner/NUnit.Runners.3.8.0/tools/nunit-console.exe eWolfLabs/ExamplesUnitTests/bin/Release/ExamplesUnitTests.dll
+  - mono ./testrunner/NUnit.Runners.3.8.0/tools/nunit3-console.exe eWolfLabs/ExamplesUnitTests/bin/Release/ExamplesUnitTests.dll
   
