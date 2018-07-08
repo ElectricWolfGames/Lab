@@ -44,3 +44,7 @@
 /eWolfLabs/Collection/collection/obj/Release
 /eWolfLabs/Collection/CollectionUnitTests/bin/Release
 /eWolfLabs/Collection/CollectionUnitTests/obj/Release
+/eWolfLabs/BranchCover/BranchCoverExample/bin
+/eWolfLabs/BranchCover/BranchCoverExample/obj
+/eWolfLabs/BranchCover/BranchCoverExampleUnitTests/bin/Debug
+/eWolfLabs/BranchCover/BranchCoverExampleUnitTests/obj
