@@ -1,4 +1,4 @@
-﻿namespace UntestableCode.Testable
+﻿namespace UntestableCode.Testable.Interface
 {
     public interface IStaticHolder
     {

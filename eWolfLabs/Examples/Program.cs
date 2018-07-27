@@ -1,10 +1,13 @@
-﻿namespace Examples
+﻿using Examples.AsyncCode;
+
+namespace Examples
 {
     public static class Program
     {
         private static void Main(string[] args)
         {
-            // add the calling code here
+            BackGroundTask bgt = new BackGroundTask();
+            bgt.TaskRunner();
         }
     }
 }

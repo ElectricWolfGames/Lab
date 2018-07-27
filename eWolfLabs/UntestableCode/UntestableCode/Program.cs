@@ -9,9 +9,11 @@ namespace UntestableCode
         private static void Main(string[] args)
         {
             UsingStaticsTestable us = new UsingStaticsTestable();
-            //UsingManyStaticsUntestable us = new UsingManyStaticsUntestable();
             us.Run();
+            Console.ReadKey();
 
+            UsingManyStaticsUntestable us2 = new UsingManyStaticsUntestable();
+            us2.Run();
             Console.ReadKey();
         }
     }
