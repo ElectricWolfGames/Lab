@@ -4,7 +4,7 @@ internal int ParseText(string text)
     int comma = text.IndexOf(",");
     if (comma > -1)
     {
-        text = text.Remove(comma, 1);
+        text = text.Remove(comma);
     }
 
     int result;

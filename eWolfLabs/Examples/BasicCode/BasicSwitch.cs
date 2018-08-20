@@ -1,4 +1,6 @@
-﻿namespace Examples.BasicCode
+﻿using System.ComponentModel;
+
+namespace Examples.BasicCode
 {
     public class BasicSwitch
     {
@@ -6,7 +8,8 @@
         {
             None,
             First,
-            Second
+            Second,
+            Secondmore
         }
 
         public string GetStringFrom(SwitchableEnum value)

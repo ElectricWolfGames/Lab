@@ -8,9 +8,8 @@ namespace Calculator
         private int _secondNumber;
         private readonly Func<string> _input;
 
-        public AddNumberFullCover()
+        public AddNumberFullCover(): this (GetInput)
         {
-            _input = GetInput;
         }
 
         public AddNumberFullCover(Func<string> input) : base()
@@ -32,7 +31,7 @@ namespace Calculator
             return added;
         }
 
-        public string GetInput()
+        public static string GetInput()
         {
             return Console.ReadLine();
         }

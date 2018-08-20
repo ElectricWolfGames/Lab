@@ -27,6 +27,7 @@ namespace UntestableCode.Testable
 
             string inputValue;
             _getInput.Invoke(out inputValue);
+
             _logger($"Here is your text = {inputValue}");
         }
 
