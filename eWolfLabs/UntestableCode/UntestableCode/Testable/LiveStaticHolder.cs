@@ -1,4 +1,6 @@
-﻿namespace UntestableCode.Testable
+﻿using UntestableCode.Testable.Interface;
+
+namespace UntestableCode.Testable
 {
     public class LiveStaticHolder : IStaticHolder
     {

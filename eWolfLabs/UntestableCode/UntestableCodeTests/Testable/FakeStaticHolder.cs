@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using UntestableCode.Testable;
+using UntestableCode.Testable.Interface;
 
 namespace UntestableCodeTests.Testable
 {

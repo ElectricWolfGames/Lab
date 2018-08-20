@@ -1,4 +1,5 @@
 ﻿using System;
+using UntestableCode.Testable.Interface;
 
 namespace UntestableCode.Testable
 {

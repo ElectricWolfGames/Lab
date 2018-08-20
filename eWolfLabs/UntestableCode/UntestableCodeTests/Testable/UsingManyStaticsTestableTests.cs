@@ -35,5 +35,5 @@ namespace UntestableCodeTests.Testable
         {
             _outputs.Add(textToDisplay);
         }
-    }    
+    }
 }

@@ -7,7 +7,7 @@ namespace CalculatorUnitTests
 {
     public class AddNumberFullCoverTests
     {
-        private Queue _myInputs = new Queue();
+        private readonly Queue _myInputs = new Queue();
 
         [TestCase("5", 5)]
         [TestCase("15", 15)]
@@ -21,14 +21,14 @@ namespace CalculatorUnitTests
             value.Should().Be(expected);
         }
 
-        [TestCase("a", 0)]
-        [TestCase("I love cats", 0)]
-        public void ShouldNotParseText(string text, int expected)
+        [TestCase("a")]
+        [TestCase("I love cats")]
+        public void ShouldNotParseText(string text)
         {
             AddNumberFullCover an = new AddNumberFullCover(null);
 
             int value = an.ParseText(text);
-            value.Should().Be(expected);
+            value.Should().Be(0);
         }
 
         [TestCase("20", "20", 40)]
