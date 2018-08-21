@@ -14,12 +14,19 @@ namespace Examples
 
             ShowEmbeddedResources();
 
+            ShowExpressionTrees();
+
             Console.ReadKey();
+        }
+
+        private static void ShowExpressionTrees()
+        {
+            ExpressionTrees et = new ExpressionTrees();
+            et.ShowTree();
         }
 
         private static void ShowEmbeddedResources()
         {
-            // EmbeddedResource
             EmbeddedResource.ShouldAllEmbeddedResources();
             Console.WriteLine("Show example embedded resourse file");
             Console.WriteLine(EmbeddedResource.LoadExampleFile());
