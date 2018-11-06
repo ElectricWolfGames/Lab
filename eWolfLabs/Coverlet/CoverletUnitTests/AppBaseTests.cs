@@ -1,18 +1,18 @@
 ﻿using Coverlet;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using FluentAssertions;
+using NUnit.Framework;
 
 namespace CoverletUnitTests
 {
-    [TestClass]
     public class AppBaseTests
     {
-        [TestMethod]
+        [Test]
         public void ShouldGetStringReturnEmpty()
         {
             AppBase pb = new AppBase();
             string str = pb.GetString(0);
 
-            Assert.AreEqual(string.Empty, str);
+            str.Should().Be(string.Empty);
         }
     }
 }
