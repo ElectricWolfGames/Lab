@@ -8,3 +8,4 @@ dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
 
 dotnet C:\Users\kGillott\.nuget\packages\reportgenerator\4.0.2\tools\netcoreapp2.0\ReportGenerator.dll "-reports:D:\Personal\GitWolf\Lab\eWolfLabs\Coverlet\CoverletUnitTests\coverage.opencover.xml"  "-targetdir:D:\Reports"
 
+https://dotnetthoughts.net/code-coverage-in-netcore-with-coverlet/
