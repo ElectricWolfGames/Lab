@@ -1,6 +1,4 @@
-﻿using System.ComponentModel;
-
-namespace Examples.BasicCode
+﻿namespace Examples.BasicCode
 {
     public class BasicSwitch
     {

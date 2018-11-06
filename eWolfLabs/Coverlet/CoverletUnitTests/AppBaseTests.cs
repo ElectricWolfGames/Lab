@@ -1,5 +1,4 @@
-﻿using System;
-using Coverlet;
+﻿using Coverlet;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CoverletUnitTests
@@ -13,7 +12,7 @@ namespace CoverletUnitTests
             AppBase pb = new AppBase();
             string str = pb.GetString(0);
 
-            Assert.AreEqual("", str);
+            Assert.AreEqual(string.Empty, str);
         }
     }
 }

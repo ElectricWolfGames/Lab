@@ -8,7 +8,7 @@ namespace Calculator
         private int _secondNumber;
         private readonly Func<string> _input;
 
-        public AddNumberFullCover(): this (GetInput)
+        public AddNumberFullCover() : this(GetInput)
         {
         }
 

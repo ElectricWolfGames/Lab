@@ -1,5 +1,4 @@
-﻿using Examples.AsyncCode;
-using Examples.Reflection;
+﻿using Examples.Reflection;
 using System;
 
 namespace Examples
