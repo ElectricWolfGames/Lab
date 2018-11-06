@@ -54,3 +54,7 @@
 /eWolfLabs/TestTests/obj/Debug
 /eWolfLabs/BranchCover/.vs/BranchCoverCheck/v15/Server/sqlite3
 /eWolfLabs/BranchCover/.vs/BranchCoverCheck/v15
+/eWolfLabs/Coverlet/Coverlet/bin/Debug
+/eWolfLabs/Coverlet/Coverlet/obj/Debug
+/eWolfLabs/Coverlet/CoverletUnitTests/bin/Debug
+/eWolfLabs/Coverlet/CoverletUnitTests/obj/Debug
