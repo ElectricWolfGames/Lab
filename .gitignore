@@ -63,3 +63,6 @@
 /eWolfLabs/Coverlet/CoverletUnitTests/coverage.json
 /eWolfLabs/Coverlet/Coverlet/obj/Release
 /eWolfLabs/Coverlet/CoverletUnitTests/obj/Release
+/eWolfLabs/BranchCover/BranchCoverExampleUnitTests/bin/Release
+/eWolfLabs/Tools/GitTools/bin/Debug
+/eWolfLabs/Tools/GitTools/obj/Debug
