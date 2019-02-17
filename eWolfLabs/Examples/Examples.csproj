@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="AsyncCode\BackGroundTask.cs" />
     <Compile Include="BasicCode\BasicSwitch.cs" />
+    <Compile Include="BasicCode\CachedBool.cs" />
     <Compile Include="BasicCode\EliminateSwitch.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Program.cs" />
