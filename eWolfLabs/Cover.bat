@@ -1,0 +1,2 @@
+
+"C:\Users\kGillott\.nuget\packages\opencover\4.6.519\tools\OpenCover.Console.exe" -register:user -target:"C:\Apps\NUnit.Console-3.7.0\nunit3-console.exe" -targetargs:"D:\Personal\GitWolf\Lab\eWolfLabs\Coverlet\CoverletUnitTests\bin\Debug\CoverletUnitTests.dll\" /resultsfile:\"D:\Reports\Report.trx\"" -filter:"+[CoverletUnitTests*]* -[CoverletUnitTests.Tests]* -[*]CoverletUnitTests.RouteConfig" -mergebyhash -skipautoprops -output:"D:\Reports\CoverletUnitTests.xml"

@@ -14,6 +14,7 @@ namespace GitTools
 
         internal void Display()
         {
+            Console.WriteLine("--------------------------------------------");
             Console.WriteLine("Name:" + Name + " by " + Author.Name);
             Console.WriteLine(" at " + Author.When);
         }
