@@ -1,4 +1,5 @@
-﻿using Examples.Reflection;
+﻿using Examples.AdvancedCode;
+using Examples.Reflection;
 using System;
 
 namespace Examples
@@ -10,6 +11,8 @@ namespace Examples
             // Back ground runner
             //BackGroundTask bgt = new BackGroundTask();
             //bgt.TaskRunner();
+
+            ExecuteCode cb = new ExecuteCode();
 
             ShowEmbeddedResources();
 

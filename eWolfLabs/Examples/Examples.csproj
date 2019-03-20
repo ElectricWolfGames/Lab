@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdvancedCode\ExecuteCode.cs" />
     <Compile Include="AsyncCode\BackGroundTask.cs" />
     <Compile Include="BasicCode\BasicSwitch.cs" />
     <Compile Include="BasicCode\CachedBool.cs" />
