@@ -1,0 +1,7 @@
+
+
+
+Get the list of all the builds for each style of plato form.
+http://tdxhlwtfs0001:8080/tfs/RM/_apis/build/Builds?projectName=DataHub.Master&minFinishTime=2018-12-12T00%3A00%3A00&status=30
+
+and display them on the pages

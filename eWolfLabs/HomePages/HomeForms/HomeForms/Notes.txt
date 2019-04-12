@@ -1,0 +1,7 @@
+﻿
+-- todo next:
+- can we get to the clipbuffer from this ap ?
+- can we use a timer?
+
+Add a new page that will show all the copyed text from the copy buffer
+and also show the parse exception message
