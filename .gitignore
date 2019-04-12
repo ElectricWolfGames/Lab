@@ -66,3 +66,5 @@
 /eWolfLabs/BranchCover/BranchCoverExampleUnitTests/bin/Release
 /eWolfLabs/Tools/GitTools/bin/Debug
 /eWolfLabs/Tools/GitTools/obj/Debug
+/eWolfLabs/.vs/eWolfLabs/v16/Server/sqlite3
+/eWolfLabs/.vs/eWolfLabs/v16
