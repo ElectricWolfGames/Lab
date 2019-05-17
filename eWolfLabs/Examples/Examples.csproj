@@ -48,6 +48,7 @@
     <Compile Include="BasicCode\BasicSwitch.cs" />
     <Compile Include="BasicCode\CachedBool.cs" />
     <Compile Include="BasicCode\EliminateSwitch.cs" />
+    <Compile Include="PlayerControl\PlayerControl.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -66,5 +67,6 @@
     <Analyzer Include="..\packages\SonarAnalyzer.CSharp.7.11.0.8083\analyzers\SonarAnalyzer.CSharp.dll" />
     <Analyzer Include="..\packages\SonarAnalyzer.CSharp.7.11.0.8083\analyzers\SonarAnalyzer.dll" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

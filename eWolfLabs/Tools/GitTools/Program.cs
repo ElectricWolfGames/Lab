@@ -7,8 +7,7 @@ namespace GitTools
     {
         private static void Main(string[] args)
         {
-            // GitHistory gh = new GitHistory(@"C:\GitHub\Labs\Labs");
-            GitHistory gh = new GitHistory(@"C:\Git\PlatoLive\");
+            GitHistory gh = new GitHistory(@"C:\GitHub\eWolfLabs\");
 
             List<CommitData> commits = gh.GetHistory();
 

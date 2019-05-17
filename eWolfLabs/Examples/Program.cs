@@ -1,4 +1,5 @@
 ﻿using Examples.AdvancedCode;
+using Examples.BasicCode;
 using Examples.Reflection;
 using System;
 
@@ -14,9 +15,13 @@ namespace Examples
 
             ExecuteCode cb = new ExecuteCode();
 
-            ShowEmbeddedResources();
+            //ShowEmbeddedResources();
 
-            ShowExpressionTrees();
+            //ShowExpressionTrees();
+
+            PlayerControl pc = new PlayerControl();
+            pc.Update();
+            pc.Update();
 
             Console.ReadKey();
         }
