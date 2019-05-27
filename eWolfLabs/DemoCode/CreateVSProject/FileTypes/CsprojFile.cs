@@ -1,5 +1,6 @@
 ﻿using CreateVSProject.Holders;
 using CreateVSProject.Interfaces;
+using System.IO;
 using System.Text;
 
 namespace CreateVSProject.FileTypes
@@ -34,9 +35,11 @@ namespace CreateVSProject.FileTypes
             StringBuilder sb = new StringBuilder();
             sb.AppendLine(@"  <ItemGroup>");
 
-            foreach (string filename in ProjectDetailsHolder.FoldersToAdd)
+            foreach (string folderName in ProjectDetailsHolder.FoldersToAdd)
             {
-                sb.AppendLine($@"    <Folder Include=""{filename}\"" />");
+                Directory.CreateDirectory(Path.Combine(ProjectDetailsHolder.OutputPath, folderName));
+
+                sb.AppendLine($@"    <Folder Include=""{folderName}\"" />");
             }
             sb.AppendLine(@"  </ItemGroup>");
             return sb.ToString();

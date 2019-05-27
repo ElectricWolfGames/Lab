@@ -23,12 +23,7 @@ namespace CreateVSProject.Builders
             _folders.Add("Properties");
         }
 
-        internal void AddFluentAssertions()
-        {
-            throw new NotImplementedException();
-        }
-
-        internal void AddExtraFiles()
+        public void AddExtraFiles()
         {
             if (_projectDetailsHolder.UnitTest)
             {
