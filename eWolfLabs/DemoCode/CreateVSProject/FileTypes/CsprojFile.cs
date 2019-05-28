@@ -17,6 +17,7 @@ namespace CreateVSProject.FileTypes
             sb.Append(ItemGroupReferenceInclude());
             sb.Append(ItemGroupProjectFolders());
             sb.Append(ItemGroupProjectFiles());
+            sb.Append(ItemGroupSonarQube());
 
             sb.Append(ProjectEnd());
             return sb.ToString();
@@ -58,6 +59,18 @@ namespace CreateVSProject.FileTypes
             return sb.ToString();
         }
 
+        private string ItemGroupSonarQube()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine(@"  <ItemGroup>");
+            sb.AppendLine(@"   <Analyzer Include=""..\..\..\packages\SonarAnalyzer.CSharp.7.14.0.8411\analyzers\Google.Protobuf.dll"" />");
+            sb.AppendLine(@"   <Analyzer Include=""..\..\..\packages\SonarAnalyzer.CSharp.7.14.0.8411\analyzers\SonarAnalyzer.CSharp.dll"" />");
+            sb.AppendLine(@"   <Analyzer Include=""..\..\..\packages\SonarAnalyzer.CSharp.7.14.0.8411\analyzers\SonarAnalyzer.dll"" />");
+            sb.AppendLine(@"  </ItemGroup>");
+
+            return sb.ToString();
+        }
+
         private string ItemGroupReferenceInclude()
         {
             StringBuilder sb = new StringBuilder();
@@ -66,7 +79,7 @@ namespace CreateVSProject.FileTypes
             if (ProjectDetailsHolder.UnitTest)
             {
                 sb.AppendLine(@"<Reference Include=""nunit.framework, Version = 3.12.0.0, Culture = neutral, PublicKeyToken = 2638cd05610744eb, processorArchitecture = MSIL"">");
-                sb.AppendLine(@"    <HintPath>..\..\..\..\..\packages\NUnit.3.12.0\lib\net45\nunit.framework.dll</HintPath>");
+                sb.AppendLine(@"    <HintPath>..\..\..\..\packages\NUnit.3.12.0\lib\net45\nunit.framework.dll</HintPath>");
                 sb.AppendLine(@"</Reference>");
             }
 
@@ -92,8 +105,8 @@ namespace CreateVSProject.FileTypes
                 sb.AppendLine(@"    <PropertyGroup>");
                 sb.AppendLine(@"      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>");
                 sb.AppendLine(@"    </PropertyGroup>");
-                sb.AppendLine(@"    <Error Condition=""!Exists('..\..\..\..\..\packages\NUnit.3.12.0\build\NUnit.props')"" Text=""$([System.String]::Format('$(ErrorText)', '..\..\..\..\..\packages\NUnit.3.12.0\build\NUnit.props'))"" />");
-                sb.AppendLine(@"    <Error Condition=""!Exists('..\..\..\..\..\packages\NUnit3TestAdapter.3.13.0\build\net35\NUnit3TestAdapter.props')"" Text=""$([System.String]::Format('$(ErrorText)', '..\..\..\..\..\packages\NUnit3TestAdapter.3.13.0\build\net35\NUnit3TestAdapter.props'))"" />");
+                sb.AppendLine(@"    <Error Condition=""!Exists('..\..\..\packages\NUnit.3.12.0\build\NUnit.props')"" Text=""$([System.String]::Format('$(ErrorText)', '..\..\..\packages\NUnit.3.12.0\build\NUnit.props'))"" />");
+                sb.AppendLine(@"    <Error Condition=""!Exists('..\..\..\packages\NUnit3TestAdapter.3.13.0\build\net35\NUnit3TestAdapter.props')"" Text=""$([System.String]::Format('$(ErrorText)', '..\..\..\packages\NUnit3TestAdapter.3.13.0\build\net35\NUnit3TestAdapter.props'))"" />");
                 sb.AppendLine(@"  </Target>");
             }
             sb.AppendLine(@"</Project>");
@@ -113,8 +126,8 @@ namespace CreateVSProject.FileTypes
             StringBuilder sb = new StringBuilder();
             if (ProjectDetailsHolder.UnitTest)
             {
-                sb.AppendLine(@"  <Import Project=""..\..\..\..\..\packages\NUnit3TestAdapter.3.13.0\build\net35\NUnit3TestAdapter.props"" Condition=""Exists('..\..\..\..\..\packages\NUnit3TestAdapter.3.13.0\build\net35\NUnit3TestAdapter.props')"" />");
-                sb.AppendLine(@"  <Import Project=""..\..\..\..\..\packages\NUnit.3.12.0\build\NUnit.props"" Condition=""Exists('..\..\..\..\..\packages\NUnit.3.12.0\build\NUnit.props')"" />");
+                sb.AppendLine(@"  <Import Project=""..\..\..\packages\NUnit3TestAdapter.3.13.0\build\net35\NUnit3TestAdapter.props"" Condition=""Exists('..\..\..\..\..\packages\NUnit3TestAdapter.3.13.0\build\net35\NUnit3TestAdapter.props')"" />");
+                sb.AppendLine(@"  <Import Project=""..\..\..\packages\NUnit.3.12.0\build\NUnit.props"" Condition=""Exists('..\..\..\packages\NUnit.3.12.0\build\NUnit.props')"" />");
             }
 
             sb.AppendLine(@" <Import Project=""$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props"" Condition=""Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')"" />");
