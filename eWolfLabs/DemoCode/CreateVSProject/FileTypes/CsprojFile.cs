@@ -18,6 +18,7 @@ namespace CreateVSProject.FileTypes
             sb.Append(ItemGroupReferenceInclude());
             sb.Append(ItemGroupProjectFolders());
             sb.Append(ItemGroupProjectFiles());
+
             if (ProjectDetailsHolder.UnitTest)
             {
                 sb.Append(ItemGroupProjectFilesListUnitTests());
@@ -141,7 +142,11 @@ namespace CreateVSProject.FileTypes
             if (ProjectDetailsHolder.UnitTest)
             {
                 sb.AppendLine(@"<Reference Include=""nunit.framework, Version = 3.12.0.0, Culture = neutral, PublicKeyToken = 2638cd05610744eb, processorArchitecture = MSIL"">");
-                sb.AppendLine(@"    <HintPath>..\..\..\..\packages\NUnit.3.12.0\lib\net45\nunit.framework.dll</HintPath>");
+                sb.AppendLine(@"    <HintPath>..\..\..\packages\NUnit.3.12.0\lib\net45\nunit.framework.dll</HintPath>");
+                sb.AppendLine(@"</Reference>");
+
+                sb.AppendLine(@"<Reference Include=""FluentAssertions, Version=5.5.1.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL"">");
+                sb.AppendLine(@"     <HintPath>..\..\..\packages\FluentAssertions.5.5.1\lib\net45\FluentAssertions.dll</HintPath>");
                 sb.AppendLine(@"</Reference>");
             }
 
@@ -188,7 +193,7 @@ namespace CreateVSProject.FileTypes
             StringBuilder sb = new StringBuilder();
             if (ProjectDetailsHolder.UnitTest)
             {
-                sb.AppendLine(@"  <Import Project=""..\..\..\packages\NUnit3TestAdapter.3.13.0\build\net35\NUnit3TestAdapter.props"" Condition=""Exists('..\..\..\..\..\packages\NUnit3TestAdapter.3.13.0\build\net35\NUnit3TestAdapter.props')"" />");
+                sb.AppendLine(@"  <Import Project=""..\..\..\packages\NUnit3TestAdapter.3.13.0\build\net35\NUnit3TestAdapter.props"" Condition=""Exists('..\..\..\packages\NUnit3TestAdapter.3.13.0\build\net35\NUnit3TestAdapter.props')"" />");
                 sb.AppendLine(@"  <Import Project=""..\..\..\packages\NUnit.3.12.0\build\NUnit.props"" Condition=""Exists('..\..\..\packages\NUnit.3.12.0\build\NUnit.props')"" />");
             }
 

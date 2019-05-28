@@ -28,10 +28,10 @@ namespace CreateVSProject.Builders
             if (_projectDetailsHolder.UnitTest)
             {
                 PackagesFile.Files.Add(@"  <package id=""NUnit"" version=""3.12.0"" targetFramework=""net471"" />");
-                PackagesFile.Files.Add(@"  <package id=""NUnit3TestAdapter"" version=""3.10.0"" targetFramework=""net461"" />");
-                PackagesFile.Files.Add(@"  <package id=""FluentAssertions"" version=""5.4.2"" targetFramework=""net461"" />");
+                PackagesFile.Files.Add(@"  <package id=""NUnit3TestAdapter"" version=""3.13.0"" targetFramework=""net461"" />");
+                PackagesFile.Files.Add(@"  <package id=""FluentAssertions"" version=""5.5.1"" targetFramework=""net461"" />");
             }
-            PackagesFile.Files.Add(@"<package id=""SonarAnalyzer.CSharp"" version=""7.14.0.8411"" targetFramework=""net471"" developmentDependency=""true"" />");
+            PackagesFile.Files.Add(@"  <package id=""SonarAnalyzer.CSharp"" version=""7.14.0.8411"" targetFramework=""net471"" developmentDependency=""true"" />");
         }
 
         public void CreateProject()
