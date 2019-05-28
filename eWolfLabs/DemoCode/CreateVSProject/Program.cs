@@ -49,8 +49,8 @@ namespace CreateVSProject
                 FoldersToAdd = folderToAdd
             };
 
-            pdh.OutputPath = Path.Combine(_path, pdh.Name, pdh.Name + ".UnitTest");
-            pdh.Name += ".UnitTest";
+            pdh.OutputPath = Path.Combine(_path, pdh.Name, pdh.Name + ".UnitTests");
+            pdh.Name += ".UnitTests";
 
             VSProject vsp = new VSProject(pdh);
             vsp.AddExtraFiles();

@@ -48,7 +48,7 @@ namespace CreateVSProject.FileTypes
             sb.AppendLine(@"// [assembly: AssemblyVersion(""1.0.* "")]");
             sb.AppendLine(@"[assembly: AssemblyVersion(""1.0.0.0"")]");
             sb.AppendLine(@"[assembly: AssemblyFileVersion(""1.0.0.0"")]");
-
+            sb.AppendLine($@"[assembly: InternalsVisibleTo(""{ProjectDetailsHolder.Name}.UnitTests"")]");
             return sb.ToString();
         }
 
