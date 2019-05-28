@@ -14,5 +14,7 @@ namespace CreateVSProject.Holders
         public bool UnitTest { get; set; }
 
         public List<string> FoldersToAdd { get; set; }
+
+        public List<string> FilesToAdd { get; set; }
     }
 }

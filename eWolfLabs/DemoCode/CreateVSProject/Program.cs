@@ -8,7 +8,7 @@ namespace CreateVSProject
 {
     public class Program
     {
-        private static string _path = @"C:\GitHub\eWolfLabs\eWolfLabs\DemoCode\CreateVSProject\Data\";
+        private static string _path = @"C:\GitHub\eWolfLabs\eWolfLabs\DemoCode\Output\";
 
         private static void Main(string[] args)
         {
@@ -19,17 +19,20 @@ namespace CreateVSProject
             foldersToAdd.Add("Outbound");
             foldersToAdd.Add("Components");
 
-            CreateMainProject(foldersToAdd);
-            CreateUnitTestProject(foldersToAdd);
+            filesToAdd.Add(@"Components\MyComponent.cs");
+
+            CreateMainProject(foldersToAdd, filesToAdd);
+            CreateUnitTestProject(foldersToAdd, filesToAdd);
         }
 
-        private static void CreateMainProject(List<string> folderToAdd)
+        private static void CreateMainProject(List<string> folderToAdd, List<string> filesToAdd)
         {
             ProjectDetailsHolder pdh = new ProjectDetailsHolder()
             {
                 Name = "NewCTO",
                 Guid = Guid.NewGuid(),
-                FoldersToAdd = folderToAdd
+                FoldersToAdd = folderToAdd,
+                FilesToAdd = filesToAdd
             };
 
             pdh.OutputPath = Path.Combine(_path, pdh.Name, pdh.Name);
@@ -39,14 +42,15 @@ namespace CreateVSProject
             vsp.CreateProject();
         }
 
-        private static void CreateUnitTestProject(List<string> folderToAdd)
+        private static void CreateUnitTestProject(List<string> folderToAdd, List<string> filesToAdd)
         {
             ProjectDetailsHolder pdh = new ProjectDetailsHolder()
             {
                 Name = "NewCTO",
                 Guid = Guid.NewGuid(),
                 UnitTest = true,
-                FoldersToAdd = folderToAdd
+                FoldersToAdd = folderToAdd,
+                FilesToAdd = filesToAdd
             };
 
             pdh.OutputPath = Path.Combine(_path, pdh.Name, pdh.Name + ".UnitTests");

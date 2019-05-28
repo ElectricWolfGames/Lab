@@ -1,5 +1,6 @@
 ﻿using CreateVSProject.Holders;
 using CreateVSProject.Interfaces;
+using System;
 using System.IO;
 using System.Text;
 
@@ -17,6 +18,14 @@ namespace CreateVSProject.FileTypes
             sb.Append(ItemGroupReferenceInclude());
             sb.Append(ItemGroupProjectFolders());
             sb.Append(ItemGroupProjectFiles());
+            if (ProjectDetailsHolder.UnitTest)
+            {
+                sb.Append(ItemGroupProjectFilesListUnitTests());
+            }
+            else
+            {
+                sb.Append(ItemGroupProjectFilesList());
+            }
             sb.Append(ItemGroupSonarQube());
 
             sb.Append(ProjectEnd());
@@ -44,6 +53,59 @@ namespace CreateVSProject.FileTypes
             }
             sb.AppendLine(@"  </ItemGroup>");
             return sb.ToString();
+        }
+
+        private string ItemGroupProjectFilesListUnitTests()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine(@"  <ItemGroup>");
+
+            foreach (string fileName in ProjectDetailsHolder.FilesToAdd)
+            {
+                string fileNameUpdated = fileName.Replace(".", "Test.");
+                string file = CreateBasicUnitTestCSFile(ProjectDetailsHolder, fileName);
+                string fullFileName = Path.Combine(ProjectDetailsHolder.OutputPath, fileNameUpdated);
+                File.WriteAllText(fullFileName, file);
+
+                sb.AppendLine($@"    <Compile Include=""{fileNameUpdated}"" />");
+            }
+            sb.AppendLine(@"  </ItemGroup>");
+            return sb.ToString();
+        }
+
+        private string ItemGroupProjectFilesList()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine(@"  <ItemGroup>");
+
+            foreach (string fileName in ProjectDetailsHolder.FilesToAdd)
+            {
+                string file = CreateBasicCSFile(ProjectDetailsHolder, fileName);
+                string fullFileName = Path.Combine(ProjectDetailsHolder.OutputPath, fileName);
+                File.WriteAllText(fullFileName, file);
+
+                sb.AppendLine($@"    <Compile Include=""{fileName}"" />");
+            }
+            sb.AppendLine(@"  </ItemGroup>");
+            return sb.ToString();
+        }
+
+        private string CreateBasicUnitTestCSFile(ProjectDetailsHolder projectDetailsHolder, string name)
+        {
+            CSUnitTestFile csFile = new CSUnitTestFile(name)
+            {
+                ProjectDetailsHolder = projectDetailsHolder
+            };
+            return csFile.Output();
+        }
+
+        private string CreateBasicCSFile(ProjectDetailsHolder projectDetailsHolder, string name)
+        {
+            CSFile csFile = new CSFile(name)
+            {
+                ProjectDetailsHolder = projectDetailsHolder
+            };
+            return csFile.Output();
         }
 
         private string ItemGroupProjectFiles()

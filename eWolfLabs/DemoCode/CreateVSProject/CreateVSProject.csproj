@@ -45,7 +45,9 @@
   <ItemGroup>
     <Compile Include="FileTypes\AppFile.cs" />
     <Compile Include="FileTypes\AssemblyInfoFile.cs" />
+    <Compile Include="FileTypes\CSFile.cs" />
     <Compile Include="FileTypes\CsprojFile.cs" />
+    <Compile Include="FileTypes\CSUnitTestFile.cs" />
     <Compile Include="Interfaces\IOutputFile.cs" />
     <Compile Include="FileTypes\PackagesFile.cs" />
     <Compile Include="Program.cs" />
