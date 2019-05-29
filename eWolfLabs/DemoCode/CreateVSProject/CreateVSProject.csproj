@@ -43,6 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Builders\Settings\FluentAssertionsSettings.cs" />
+    <Compile Include="Builders\Settings\NetFramework.cs" />
+    <Compile Include="Builders\Settings\SonarQubeSettings.cs" />
     <Compile Include="FileTypes\AppFile.cs" />
     <Compile Include="FileTypes\AssemblyInfoFile.cs" />
     <Compile Include="FileTypes\CSFile.cs" />

@@ -1,4 +1,5 @@
-﻿using CreateVSProject.FileTypes;
+﻿using CreateVSProject.Builders.Settings;
+using CreateVSProject.FileTypes;
 using CreateVSProject.Holders;
 using CreateVSProject.Interfaces;
 using System;
@@ -29,9 +30,10 @@ namespace CreateVSProject.Builders
             {
                 PackagesFile.Files.Add(@"  <package id=""NUnit"" version=""3.12.0"" targetFramework=""net471"" />");
                 PackagesFile.Files.Add(@"  <package id=""NUnit3TestAdapter"" version=""3.13.0"" targetFramework=""net461"" />");
-                PackagesFile.Files.Add(@"  <package id=""FluentAssertions"" version=""5.5.1"" targetFramework=""net461"" />");
+                PackagesFile.Files.AddRange(FluentAssertionsSettings.GetPackageLines());
             }
-            PackagesFile.Files.Add(@"  <package id=""SonarAnalyzer.CSharp"" version=""7.14.0.8411"" targetFramework=""net471"" developmentDependency=""true"" />");
+
+            PackagesFile.Files.AddRange(SonarQubeSettings.GetPackageLines());
         }
 
         public void CreateProject()
