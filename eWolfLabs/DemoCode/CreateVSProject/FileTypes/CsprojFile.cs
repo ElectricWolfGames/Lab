@@ -1,6 +1,5 @@
 ﻿using CreateVSProject.Holders;
 using CreateVSProject.Interfaces;
-using System;
 using System.IO;
 using System.Text;
 

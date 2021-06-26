@@ -4,6 +4,4 @@
     {
         public static readonly string TargetFramework = "net471";
     }
-    
-
 }

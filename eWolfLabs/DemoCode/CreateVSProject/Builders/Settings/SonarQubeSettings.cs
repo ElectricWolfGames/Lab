@@ -2,8 +2,6 @@
 
 namespace CreateVSProject.Builders.Settings
 {
-
-
     public static class SonarQubeSettings
     {
         private static readonly string SonarVerson = "7.14.0.8411";
@@ -15,6 +13,4 @@ namespace CreateVSProject.Builders.Settings
             return items;
         }
     }
-    
-
 }

@@ -13,6 +13,4 @@ namespace CreateVSProject.Builders.Settings
             return items;
         }
     }
-    
-
 }
