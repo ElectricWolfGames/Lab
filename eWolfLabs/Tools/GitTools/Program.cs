@@ -7,21 +7,17 @@ namespace GitTools
 {
     internal class Program
     {
-        private static void Main(string[] args)
+        private static void Do()
         {
-            /*GitHistory gh = new GitHistory(@"C:\GitHub\eWolfLabs\");
-
-            List<CommitData> commits = gh.GetHistory();
-
-            for (int i = 0; i < commits.Count; i++)
+            string logMessage = "";
+            using (var repo = new Repository(@"E:\Projects\GitHub\eWolfLabs\eWolfLabs\"))
             {
-                commits[i].Display();
-            }*/
-
-            Do();
-            GetLatest();
-            Console.WriteLine("Done");
-            Console.ReadKey();
+                Console.WriteLine("here");
+                var remote = repo.Network.Remotes["origin"];
+                var refSpecs = remote.FetchRefSpecs.Select(x => x.Specification);
+                Commands.Fetch(repo, remote.Name, refSpecs, null, logMessage);
+            }
+            Console.WriteLine(logMessage);
         }
 
         private static void GetLatest()
@@ -48,17 +44,21 @@ namespace GitTools
             }
         }
 
-        private static void Do()
+        private static void Main(string[] args)
         {
-            string logMessage = "";
-            using (var repo = new Repository(@"C:\GitHub\eWolfLabs\"))
+            /*GitHistory gh = new GitHistory(@"C:\GitHub\eWolfLabs\");
+
+            List<CommitData> commits = gh.GetHistory();
+
+            for (int i = 0; i < commits.Count; i++)
             {
-                Console.WriteLine("here");
-                var remote = repo.Network.Remotes["origin"];
-                var refSpecs = remote.FetchRefSpecs.Select(x => x.Specification);
-                Commands.Fetch(repo, remote.Name, refSpecs, null, logMessage);
-            }
-            Console.WriteLine(logMessage);
+                commits[i].Display();
+            }*/
+
+            Do();
+            GetLatest();
+            Console.WriteLine("Done");
+            Console.ReadKey();
         }
     }
 }
