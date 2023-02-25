@@ -18,9 +18,11 @@ namespace GitTools
             int total = 100;
             List<CommitData> commits = new List<CommitData>();
             List<Branch> allBranches = _repository.Branches.ToList();
+
             foreach (Branch b in allBranches)
             {
-                foreach (Commit c in b.Commits)
+                System.Console.WriteLine("branch : " + b.CanonicalName);
+                /*foreach (Commit c in b.Commits)
                 {
                     CommitData comitData = new CommitData();
                     // comitData.DateTime = c.
@@ -38,7 +40,7 @@ namespace GitTools
                     commits.Add(comitData);
                     if (total-- < 0)
                         break;
-                }
+                }*/
             }
             return commits;
         }
