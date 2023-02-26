@@ -5,8 +5,8 @@ namespace UntestableCodeTests.Testable
 {
     public class FakeStaticHolder : IStaticHolder
     {
-        public readonly Queue<string> OutputsStrings = new Queue<string>();
         public readonly Queue<char> OutputsKeys = new Queue<char>();
+        public readonly Queue<string> OutputsStrings = new Queue<string>();
 
         public void GetUserInput(out string inputValue)
         {

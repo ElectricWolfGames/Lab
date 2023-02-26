@@ -4,9 +4,9 @@ namespace Calculator
 {
     public class AddNumberFullCover
     {
+        private readonly Func<string> _input;
         private int _firstNumber;
         private int _secondNumber;
-        private readonly Func<string> _input;
 
         public AddNumberFullCover() : this(GetInput)
         {
@@ -17,29 +17,9 @@ namespace Calculator
             _input = input;
         }
 
-        internal int Run()
-        {
-            Console.WriteLine("Give me your first number");
-            _firstNumber = GetInputNumber();
-
-            Console.WriteLine("Give me your second number");
-            _secondNumber = GetInputNumber();
-
-            int added = _firstNumber + _secondNumber;
-            Console.WriteLine($"Add them together and we get {added}");
-
-            return added;
-        }
-
         public static string GetInput()
         {
             return Console.ReadLine();
-        }
-
-        private int GetInputNumber()
-        {
-            string text = _input.Invoke();
-            return ParseText(text);
         }
 
         internal int ParseText(string text)
@@ -56,6 +36,26 @@ namespace Calculator
                 return result;
             }
             return 0;
+        }
+
+        internal int Run()
+        {
+            Console.WriteLine("Give me your first number");
+            _firstNumber = GetInputNumber();
+
+            Console.WriteLine("Give me your second number");
+            _secondNumber = GetInputNumber();
+
+            int added = _firstNumber + _secondNumber;
+            Console.WriteLine($"Add them together and we get {added}");
+
+            return added;
+        }
+
+        private int GetInputNumber()
+        {
+            string text = _input.Invoke();
+            return ParseText(text);
         }
     }
 }

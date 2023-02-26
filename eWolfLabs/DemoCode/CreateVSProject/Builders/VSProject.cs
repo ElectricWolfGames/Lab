@@ -9,13 +9,12 @@ namespace CreateVSProject.Builders
 {
     public class VSProject
     {
-        private CsprojFile CsprojFile = new CsprojFile();
         public PackagesFile PackagesFile = new PackagesFile();
+        private List<string> _folders = new List<string>();
+        private ProjectDetailsHolder _projectDetailsHolder;
         private AppFile AppFile = new AppFile();
         private AssemblyInfoFile AssemblyInfoFile = new AssemblyInfoFile();
-        private List<string> _folders = new List<string>();
-
-        private ProjectDetailsHolder _projectDetailsHolder;
+        private CsprojFile CsprojFile = new CsprojFile();
 
         public VSProject(ProjectDetailsHolder pdh)
         {

@@ -7,6 +7,14 @@ namespace CreateVSProject.FileTypes
 {
     public class CsprojFile : IOutputFile
     {
+        public string FileName
+        {
+            get
+            {
+                return $"{ProjectDetailsHolder.Name}.csproj";
+            }
+        }
+
         public ProjectDetailsHolder ProjectDetailsHolder { get; set; }
 
         public string Output()
@@ -32,24 +40,49 @@ namespace CreateVSProject.FileTypes
             return sb.ToString();
         }
 
-        public string FileName
+        private string CreateBasicCSFile(ProjectDetailsHolder projectDetailsHolder, string name)
         {
-            get
+            CSFile csFile = new CSFile(name)
             {
-                return $"{ProjectDetailsHolder.Name}.csproj";
-            }
+                ProjectDetailsHolder = projectDetailsHolder
+            };
+            return csFile.Output();
         }
 
-        private string ItemGroupProjectFolders()
+        private string CreateBasicUnitTestCSFile(ProjectDetailsHolder projectDetailsHolder, string name)
+        {
+            CSUnitTestFile csFile = new CSUnitTestFile(name)
+            {
+                ProjectDetailsHolder = projectDetailsHolder
+            };
+            return csFile.Output();
+        }
+
+        private string ItemGroupProjectFiles()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine(@"  <ItemGroup>");
+            sb.AppendLine(@"    <Compile Include=""Properties\AssemblyInfo.cs"" />");
+            sb.AppendLine(@"  </ItemGroup>");
+            sb.AppendLine(@"  <ItemGroup>");
+            sb.AppendLine(@"        <None Include=""App.config"" />");
+            sb.AppendLine(@"        <None Include=""packages.config"" />");
+            sb.AppendLine(@"  </ItemGroup>");
+            return sb.ToString();
+        }
+
+        private string ItemGroupProjectFilesList()
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine(@"  <ItemGroup>");
 
-            foreach (string folderName in ProjectDetailsHolder.FoldersToAdd)
+            foreach (string fileName in ProjectDetailsHolder.FilesToAdd)
             {
-                Directory.CreateDirectory(Path.Combine(ProjectDetailsHolder.OutputPath, folderName));
+                string file = CreateBasicCSFile(ProjectDetailsHolder, fileName);
+                string fullFileName = Path.Combine(ProjectDetailsHolder.OutputPath, fileName);
+                File.WriteAllText(fullFileName, file);
 
-                sb.AppendLine($@"    <Folder Include=""{folderName}\"" />");
+                sb.AppendLine($@"    <Compile Include=""{fileName}"" />");
             }
             sb.AppendLine(@"  </ItemGroup>");
             return sb.ToString();
@@ -73,63 +106,18 @@ namespace CreateVSProject.FileTypes
             return sb.ToString();
         }
 
-        private string ItemGroupProjectFilesList()
+        private string ItemGroupProjectFolders()
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine(@"  <ItemGroup>");
 
-            foreach (string fileName in ProjectDetailsHolder.FilesToAdd)
+            foreach (string folderName in ProjectDetailsHolder.FoldersToAdd)
             {
-                string file = CreateBasicCSFile(ProjectDetailsHolder, fileName);
-                string fullFileName = Path.Combine(ProjectDetailsHolder.OutputPath, fileName);
-                File.WriteAllText(fullFileName, file);
+                Directory.CreateDirectory(Path.Combine(ProjectDetailsHolder.OutputPath, folderName));
 
-                sb.AppendLine($@"    <Compile Include=""{fileName}"" />");
+                sb.AppendLine($@"    <Folder Include=""{folderName}\"" />");
             }
             sb.AppendLine(@"  </ItemGroup>");
-            return sb.ToString();
-        }
-
-        private string CreateBasicUnitTestCSFile(ProjectDetailsHolder projectDetailsHolder, string name)
-        {
-            CSUnitTestFile csFile = new CSUnitTestFile(name)
-            {
-                ProjectDetailsHolder = projectDetailsHolder
-            };
-            return csFile.Output();
-        }
-
-        private string CreateBasicCSFile(ProjectDetailsHolder projectDetailsHolder, string name)
-        {
-            CSFile csFile = new CSFile(name)
-            {
-                ProjectDetailsHolder = projectDetailsHolder
-            };
-            return csFile.Output();
-        }
-
-        private string ItemGroupProjectFiles()
-        {
-            StringBuilder sb = new StringBuilder();
-            sb.AppendLine(@"  <ItemGroup>");
-            sb.AppendLine(@"    <Compile Include=""Properties\AssemblyInfo.cs"" />");
-            sb.AppendLine(@"  </ItemGroup>");
-            sb.AppendLine(@"  <ItemGroup>");
-            sb.AppendLine(@"        <None Include=""App.config"" />");
-            sb.AppendLine(@"        <None Include=""packages.config"" />");
-            sb.AppendLine(@"  </ItemGroup>");
-            return sb.ToString();
-        }
-
-        private string ItemGroupSonarQube()
-        {
-            StringBuilder sb = new StringBuilder();
-            sb.AppendLine(@"  <ItemGroup>");
-            sb.AppendLine(@"   <Analyzer Include=""..\..\..\packages\SonarAnalyzer.CSharp.7.14.0.8411\analyzers\Google.Protobuf.dll"" />");
-            sb.AppendLine(@"   <Analyzer Include=""..\..\..\packages\SonarAnalyzer.CSharp.7.14.0.8411\analyzers\SonarAnalyzer.CSharp.dll"" />");
-            sb.AppendLine(@"   <Analyzer Include=""..\..\..\packages\SonarAnalyzer.CSharp.7.14.0.8411\analyzers\SonarAnalyzer.dll"" />");
-            sb.AppendLine(@"  </ItemGroup>");
-
             return sb.ToString();
         }
 
@@ -158,6 +146,18 @@ namespace CreateVSProject.FileTypes
             sb.AppendLine(@"    <Reference Include=""System.Net.Http"" />");
             sb.AppendLine(@"    <Reference Include=""System.Xml"" />");
             sb.AppendLine(@"  </ItemGroup>");
+            return sb.ToString();
+        }
+
+        private string ItemGroupSonarQube()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine(@"  <ItemGroup>");
+            sb.AppendLine(@"   <Analyzer Include=""..\..\..\packages\SonarAnalyzer.CSharp.7.14.0.8411\analyzers\Google.Protobuf.dll"" />");
+            sb.AppendLine(@"   <Analyzer Include=""..\..\..\packages\SonarAnalyzer.CSharp.7.14.0.8411\analyzers\SonarAnalyzer.CSharp.dll"" />");
+            sb.AppendLine(@"   <Analyzer Include=""..\..\..\packages\SonarAnalyzer.CSharp.7.14.0.8411\analyzers\SonarAnalyzer.dll"" />");
+            sb.AppendLine(@"  </ItemGroup>");
+
             return sb.ToString();
         }
 

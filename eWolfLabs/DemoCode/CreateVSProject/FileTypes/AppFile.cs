@@ -6,6 +6,14 @@ namespace CreateVSProject.FileTypes
 {
     public class AppFile : IOutputFile
     {
+        public string FileName
+        {
+            get
+            {
+                return "App.config";
+            }
+        }
+
         public ProjectDetailsHolder ProjectDetailsHolder { get; set; }
 
         public string Output()
@@ -20,14 +28,6 @@ namespace CreateVSProject.FileTypes
             sb.AppendLine(@"</configuration>");
 
             return sb.ToString();
-        }
-
-        public string FileName
-        {
-            get
-            {
-                return "App.config";
-            }
         }
     }
 }

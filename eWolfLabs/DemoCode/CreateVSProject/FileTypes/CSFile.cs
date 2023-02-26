@@ -9,13 +9,22 @@ namespace CreateVSProject.FileTypes
 {
     public class CSFile : IOutputFile
     {
-        public ProjectDetailsHolder ProjectDetailsHolder { get; set; }
         private string _fileName;
 
         public CSFile(string name)
         {
             _fileName = name;
         }
+
+        public string FileName
+        {
+            get
+            {
+                return Path.GetFileNameWithoutExtension(_fileName);
+            }
+        }
+
+        public ProjectDetailsHolder ProjectDetailsHolder { get; set; }
 
         public string Output()
         {
@@ -49,14 +58,6 @@ namespace CreateVSProject.FileTypes
             sb.AppendLine(@"");
 
             return sb.ToString();
-        }
-
-        public string FileName
-        {
-            get
-            {
-                return Path.GetFileNameWithoutExtension(_fileName);
-            }
         }
     }
 }

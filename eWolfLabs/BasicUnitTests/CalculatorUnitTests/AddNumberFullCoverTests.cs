@@ -9,26 +9,9 @@ namespace CalculatorUnitTests
     {
         private readonly Queue _myInputs = new Queue();
 
-        [TestCase("5", 5)]
-        [TestCase("15", 15)]
-        [TestCase("-15", -15)]
-        [TestCase("1,200", 1200)]
-        public void ShouldParseText(string text, int expected)
+        public string GetInput()
         {
-            AddNumberFullCover an = new AddNumberFullCover(null);
-
-            int value = an.ParseText(text);
-            value.Should().Be(expected);
-        }
-
-        [TestCase("a")]
-        [TestCase("I love cats")]
-        public void ShouldNotParseText(string text)
-        {
-            AddNumberFullCover an = new AddNumberFullCover(null);
-
-            int value = an.ParseText(text);
-            value.Should().Be(0);
+            return (string)_myInputs.Dequeue();
         }
 
         [TestCase("20", "20", 40)]
@@ -45,9 +28,26 @@ namespace CalculatorUnitTests
             result.Should().Be(expected);
         }
 
-        public string GetInput()
+        [TestCase("a")]
+        [TestCase("I love cats")]
+        public void ShouldNotParseText(string text)
         {
-            return (string)_myInputs.Dequeue();
+            AddNumberFullCover an = new AddNumberFullCover(null);
+
+            int value = an.ParseText(text);
+            value.Should().Be(0);
+        }
+
+        [TestCase("5", 5)]
+        [TestCase("15", 15)]
+        [TestCase("-15", -15)]
+        [TestCase("1,200", 1200)]
+        public void ShouldParseText(string text, int expected)
+        {
+            AddNumberFullCover an = new AddNumberFullCover(null);
+
+            int value = an.ParseText(text);
+            value.Should().Be(expected);
         }
     }
 }

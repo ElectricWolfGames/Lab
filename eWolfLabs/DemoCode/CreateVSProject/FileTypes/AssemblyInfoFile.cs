@@ -6,6 +6,14 @@ namespace CreateVSProject.FileTypes
 {
     public class AssemblyInfoFile : IOutputFile
     {
+        public string FileName
+        {
+            get
+            {
+                return @"Properties\AssemblyInfo.cs";
+            }
+        }
+
         public ProjectDetailsHolder ProjectDetailsHolder { get; set; }
 
         public string Output()
@@ -50,14 +58,6 @@ namespace CreateVSProject.FileTypes
             sb.AppendLine(@"[assembly: AssemblyFileVersion(""1.0.0.0"")]");
             sb.AppendLine($@"[assembly: InternalsVisibleTo(""{ProjectDetailsHolder.Name}.UnitTests"")]");
             return sb.ToString();
-        }
-
-        public string FileName
-        {
-            get
-            {
-                return @"Properties\AssemblyInfo.cs";
-            }
         }
     }
 }

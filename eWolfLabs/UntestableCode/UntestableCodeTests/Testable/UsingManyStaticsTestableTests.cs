@@ -7,8 +7,8 @@ namespace UntestableCodeTests.Testable
 {
     public class UsingManyStaticsTestableTests
     {
-        private List<string> _outputs;
         private FakeStaticHolder _ksh;
+        private List<string> _outputs;
 
         [SetUp]
         public void SetUp()

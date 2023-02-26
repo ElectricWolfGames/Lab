@@ -7,9 +7,17 @@ namespace CreateVSProject.FileTypes
 {
     public class PackagesFile : IOutputFile
     {
-        public ProjectDetailsHolder ProjectDetailsHolder { get; set; }
-
         public List<string> Files = new List<string>();
+
+        public string FileName
+        {
+            get
+            {
+                return "packages.config";
+            }
+        }
+
+        public ProjectDetailsHolder ProjectDetailsHolder { get; set; }
 
         public string Output()
         {
@@ -24,14 +32,6 @@ namespace CreateVSProject.FileTypes
             sb.AppendLine(@"</packages>");
 
             return sb.ToString();
-        }
-
-        public string FileName
-        {
-            get
-            {
-                return "packages.config";
-            }
         }
     }
 }

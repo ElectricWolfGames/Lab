@@ -5,8 +5,8 @@ namespace UntestableCode.Testable
 {
     public class UsingManyStaticsTestable
     {
-        private readonly IStaticHolder _staticHolder;
         private readonly Action<string> _logger;
+        private readonly IStaticHolder _staticHolder;
 
         public UsingManyStaticsTestable()
         {

@@ -10,21 +10,6 @@ namespace CreateVSProject
     {
         private static string _path = @"C:\GitHub\eWolfLabs\eWolfLabs\DemoCode\Output\";
 
-        private static void Main(string[] args)
-        {
-            List<string> filesToAdd = new List<string>();
-            List<string> foldersToAdd = new List<string>();
-
-            foldersToAdd.Add("Inbound");
-            foldersToAdd.Add("Outbound");
-            foldersToAdd.Add("Components");
-
-            filesToAdd.Add(@"Components\MyComponent.cs");
-
-            CreateMainProject(foldersToAdd, filesToAdd);
-            CreateUnitTestProject(foldersToAdd, filesToAdd);
-        }
-
         private static void CreateMainProject(List<string> folderToAdd, List<string> filesToAdd)
         {
             ProjectDetailsHolder pdh = new ProjectDetailsHolder()
@@ -59,6 +44,21 @@ namespace CreateVSProject
             VSProject vsp = new VSProject(pdh);
             vsp.AddExtraFiles();
             vsp.CreateProject();
+        }
+
+        private static void Main(string[] args)
+        {
+            List<string> filesToAdd = new List<string>();
+            List<string> foldersToAdd = new List<string>();
+
+            foldersToAdd.Add("Inbound");
+            foldersToAdd.Add("Outbound");
+            foldersToAdd.Add("Components");
+
+            filesToAdd.Add(@"Components\MyComponent.cs");
+
+            CreateMainProject(foldersToAdd, filesToAdd);
+            CreateUnitTestProject(foldersToAdd, filesToAdd);
         }
     }
 }

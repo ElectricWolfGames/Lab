@@ -5,12 +5,6 @@ namespace SaveAsJson
 {
     public class Program
     {
-        public class DataToSave
-        {
-            public string Name { get; set; }
-            public int Index { get; set; }
-        }
-
         private static void Main(string[] args)
         {
             DataToSave dts = new DataToSave();
@@ -22,6 +16,12 @@ namespace SaveAsJson
             File.WriteAllText(path, output);
 
             DataToSave dtl = JsonConvert.DeserializeObject<DataToSave>(output);
+        }
+
+        public class DataToSave
+        {
+            public int Index { get; set; }
+            public string Name { get; set; }
         }
     }
 }

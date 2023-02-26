@@ -6,11 +6,10 @@ namespace GitTools
 {
     public class CommitData
     {
-        public string Name { get; set; }
+        public List<string> FileNames = new List<string>();
         public Signature Author { get; set; }
         public string BranchName { get; set; }
-
-        public List<string> FileNames = new List<string>();
+        public string Name { get; set; }
 
         internal void Display()
         {

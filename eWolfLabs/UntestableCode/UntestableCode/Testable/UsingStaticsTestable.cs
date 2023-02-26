@@ -31,14 +31,14 @@ namespace UntestableCode.Testable
             _logger($"Here is your text = {inputValue}");
         }
 
-        private void LogToScreen(string textToDisplay)
-        {
-            Console.WriteLine(textToDisplay);
-        }
-
         private static void UserInputGetInput(out string inputText)
         {
             UserInput.GetUserInput(out inputText);
+        }
+
+        private void LogToScreen(string textToDisplay)
+        {
+            Console.WriteLine(textToDisplay);
         }
     }
 }
