@@ -5,9 +5,8 @@
 
     public partial class TextToSpeech
     {
+        private const string _apikey = "<Use token>";
         private const string _baseUrl = @"https://iam.cloud.ibm.com/identity/token";
-        private const string _apikey = "tuFwwTgfX9us5kJZDtm_cJ5ML3cre6_ds2L48PIiTsKx";
-
         private const string _serviceLondon = "https://api.eu-gb.text-to-speech.watson.cloud.ibm.com";
 
         // Getting started with Speech to Text
