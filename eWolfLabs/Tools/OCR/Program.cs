@@ -11,7 +11,7 @@ namespace OCR
             Ocr.Language = OcrLanguage.English;
             using (var Input = new OcrInput())
             {
-                Input.AddImage(@"E:\Projects\GitHub\eWolfLabs\eWolfLabs\Tools\OCR\TestImage.PNG");
+                Input.AddImage(@"C:\Users\user\Documents\Ilfracombe East.png");
                 var Result = Ocr.Read(Input);
                 Console.WriteLine(Result.Text);
             }
@@ -20,7 +20,28 @@ namespace OCR
         private static void Main(string[] args)
         {
             Console.WriteLine("Hello, World!");
-            Do();
+            //Do();
+            DoFolder("E:\\Trains\\Photos - Main\\2023\\2023-08-12 Soar Vally Model Railway Club\\Descriptions\\");
+        }
+
+        private static void DoFolder(string path)
+        {
+            var files = Directory.GetFiles(path);
+
+            foreach (var file in files)
+            {
+                string saveName = file.Replace(".png", ".Txt");
+
+                var Ocr = new IronTesseract(); // nothing to configure
+                Ocr.Language = OcrLanguage.English;
+                using (var Input = new OcrInput())
+                {
+                    Input.AddImage(file);
+                    var result = Ocr.Read(Input);
+                    File.WriteAllText(saveName, result.Text);
+                    Console.WriteLine(result.Text);
+                }
+            }
         }
     }
 }
