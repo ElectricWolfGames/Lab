@@ -93,3 +93,9 @@
 /eWolfLabs/Show/APIs/API-CatFacts/obj
 /eWolfLabs/Show/APIs/APITests/bin/Debug/net7.0
 /eWolfLabs/Show/APIs/APITests/obj
+/eWolfLabs/Code.UnitTest/bin/Debug/net7.0
+/eWolfLabs/Code.UnitTest/obj
+/eWolfLabs/Show/InternalsVisibleTo/Code/obj
+/eWolfLabs/Show/InternalsVisibleTo/Code.UnitTest/bin/Debug/net7.0
+/eWolfLabs/Show/InternalsVisibleTo/Code.UnitTest/obj
+/eWolfLabs/Show/InternalsVisibleTo/Code/bin/Debug/net7.0
