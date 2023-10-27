@@ -166,7 +166,7 @@
         public float ZWL { get; set; }
     }
 
-    public class ExchangerateRateRespond
+    public class ExchangerateRateResponse
     {
         public string base_code { get; set; }
         public Conversion_Rates conversion_rates { get; set; }
