@@ -11,7 +11,7 @@ namespace OCR
             Ocr.Language = OcrLanguage.English;
             using (var Input = new OcrInput())
             {
-                Input.AddImage(@"C:\Users\user\Documents\Ilfracombe East.png");
+                Input.AddImage(@"E:\Trains\Photos - Main\2024\2024-04-06 Bingham Model Railway Show\WhatsApp Image 2024-04-07 at 20.08.42_cea37aea.jpg");
                 var Result = Ocr.Read(Input);
                 Console.WriteLine(Result.Text);
             }
@@ -20,8 +20,8 @@ namespace OCR
         private static void Main(string[] args)
         {
             Console.WriteLine("Hello, World!");
-            //Do();
-            DoFolder("E:\\Trains\\Photos - Main\\2023\\2023-08-12 Soar Vally Model Railway Club\\Descriptions\\");
+            Do();
+            //DoFolder("E:\\Trains\\Photos - Main\\2023\\2023-08-12 Soar Vally Model Railway Club\\Descriptions\\");
         }
 
         private static void DoFolder(string path)
